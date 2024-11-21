@@ -8,7 +8,7 @@ export default class Personagem {
     private arma: Arma | null;
 
     //construtor
-    constructor(nome: string, vida: number, forca: number, arma: Arma | null) {
+    constructor(nome: string, vida: number, forca: number, arma: Arma | null = null) {
         this.nome = nome;
         this.vida = vida;
         this.forca = forca;
@@ -20,7 +20,12 @@ export default class Personagem {
         return this.arma;
     }
 
+    getDetalhes(): string {
+        return `Nome: ${this.nome} - Vida: ${this.vida} - Força: ${this.forca } - Arma: ${this.arma?.getDetalhes()}`;
+    }
+
     setArma(arma: Arma): void {
         this.arma = arma;
     }
+
 }

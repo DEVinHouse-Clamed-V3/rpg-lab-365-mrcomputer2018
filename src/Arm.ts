@@ -21,6 +21,10 @@ export class Arma {
         return this.dano
     }
 
+    getDetalhes() {
+        return `${this.nome} -> ${this.descricao} - Dano: ${this.dano}`
+    }
+
     setDano(dano: number) {
         if (dano < 0) {
            return 'Dano não pode ser negativo'
@@ -28,9 +32,4 @@ export class Arma {
 
         this.dano = dano
     }
-
-    descricaoCompleta() {
-        return `${this.nome}: ${this.descricao} - Dano: ${this.dano}`
-    }
-    
 }
