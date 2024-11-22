@@ -1,7 +1,7 @@
 export class Arma {
-    private nome: string
-    private descricao: string
-    private dano: number
+    private nome: string =''
+    private descricao: string = ''
+    private dano: number = 0
     
     constructor(nome: string, descricao: string, dano: number) {
         this.nome = nome;
