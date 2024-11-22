@@ -3,17 +3,16 @@ import Inimigo from "./Inimigo";
 
 export default class Personagem {
     //atributos
-    private nome: string = '';
-    private vida: number = 0;
-    private forca: number = 0;
+    protected nome: string = '';
+    protected vida: number = 0;
+    protected forca: number = 0;
     private arma: Arma | null = null;
 
     //construtor
-    constructor(nome: string, vida: number, forca: number, arma: Arma | null) {
+    constructor(nome: string, vida: number, forca: number) {
         this.nome = nome;
         this.vida = vida;
         this.forca = forca;
-        this.arma = arma;
     }
 
     // metodos
@@ -56,13 +55,13 @@ export default class Personagem {
     atacar(alvo: Inimigo): void {
         if (Math.random() < 0.5) {
             const dano = this.calcularDano();
-            /* alvo.receberDano(dano); */
+            alvo.receberDano(dano);
         } else {
             console.log(`${this.nome} errou o ataque!`);
         }
     }
 
-    private calcularDano(): number {
+    protected calcularDano(): number {
         return this.forca + (this.arma ? this.arma.getDano() : 0);
     }
 

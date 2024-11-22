@@ -6,7 +6,8 @@ const arma = new Arma('Espada', 'Uma espada comum', 10)
 console.log(arma.getDetalhes())
 
 const personagem1 = new Personagem("Guerreiro", 100, 30); // Sem arma (arma será null)
-const personagem2 = new Personagem("Cavaleiro", 120, 40, arma); // Com arma
+const personagem2 = new Personagem("Cavaleiro", 120, 40); // Com arma
+personagem2.setArma(arma);
 
 console.log(personagem1.getArma()) // null
 console.log(personagem2.getArma()?.getDetalhes()) // Espada: Uma espada comum - Dano: 10
