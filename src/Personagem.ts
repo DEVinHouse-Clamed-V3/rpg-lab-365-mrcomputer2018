@@ -4,12 +4,12 @@ import Inimigo from "./Inimigo";
 export default class Personagem {
     //atributos
     protected nome: string = '';
-    protected vida: number = 0;
-    protected forca: number = 0;
+    protected vida: number = 100;
+    protected forca: number = 10;
     private arma: Arma | null = null;
 
     //construtor
-    constructor(nome: string, vida: number, forca: number) {
+    constructor(nome: string, vida: number = 100, forca: number = 10) {
         this.nome = nome;
         this.vida = vida;
         this.forca = forca;
@@ -76,6 +76,7 @@ export default class Personagem {
 
     equiparArma(arma: Arma): void {
         this.arma = arma;
+        console.log(`${this.nome} equipou a arma ${arma.getNome()}`);
     }   
 
 }
