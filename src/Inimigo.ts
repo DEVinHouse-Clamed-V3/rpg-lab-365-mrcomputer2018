@@ -1,4 +1,3 @@
-import { Arma } from "./Arm";
 import Personagem from "./Personagem";
 
 export default class Inimigo extends Personagem{

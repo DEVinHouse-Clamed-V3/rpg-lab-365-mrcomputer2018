@@ -2,9 +2,11 @@ import { Arma } from './Arm'
 import Inimigo from './Inimigo';
 import Personagem from './Personagem'
 
-const espada = new Arma('Espada','Uma espada comum', 30)
-
+const espada = new Arma('Espada','Uma espada comum', 300)
 const lanca = new Arma('Lança', 'Uma lança comum', 400)
+const adaga = new Arma('Adaga', 'Uma adaga comum', 200)
+const faca = new Arma('Faca', 'Uma faca comum', 100)
+const punhal = new Arma('Punhal', 'Um punhal comum', 150)
 
 console.log(espada.getDetalhes())
 
