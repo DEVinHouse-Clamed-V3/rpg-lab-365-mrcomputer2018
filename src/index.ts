@@ -1,4 +1,5 @@
 import { Arma } from './Arm'
+import Chefe from './Chefe';
 import Inimigo from './Inimigo';
 import Personagem from './Personagem'
 
@@ -31,3 +32,21 @@ personagem1.setArma(lanca);
 
 console.log("\n==== Ataque do personagem ====") 
 personagem1.atacar(inimigo1);
+
+// Criando um chefe
+const chefeFinal = new Chefe('Dragão Vermelho', 300, 500, 'Sopro de Fogo', 100);
+chefeFinal.setArma(new Arma('Garras Flamejantes', 'Garras incandescentes que causam dano em área', 600));
+
+// Simulação do jogo
+console.log("\n==== Ataque do personagem ====");
+personagem1.atacar(inimigo2);
+
+console.log("\n==== Chefe Final Entra na Luta ====");
+console.log(chefeFinal.getDetalhes());
+
+// Chefe ataca o jogador
+chefeFinal.comportamentoAleatorio(personagem1);
+
+// Personagem ataca o chefe
+console.log("\n==== Contra-Ataque do Personagem ====");
+personagem1.atacar(chefeFinal);
